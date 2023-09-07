@@ -1,0 +1,13 @@
+server:
+  port: 5000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: api-hello
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/api-hello/**
+          filters:
+            - StripPrefix=1
