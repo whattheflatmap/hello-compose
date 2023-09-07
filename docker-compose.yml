@@ -16,8 +16,6 @@ services:
             context: hello-docker
             dockerfile: Dockerfile
         image: hello-docker:latest
-        ports:
-            - 8080:8080
         networks:
             - spring-cloud-network
 networks:
