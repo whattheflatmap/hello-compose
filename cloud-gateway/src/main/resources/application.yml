@@ -6,7 +6,7 @@ spring:
     gateway:
       routes:
         - id: api-hello
-          uri: http://localhost:8080/
+          uri: http://hello-docker:8080/
           predicates:
             - Path=/api-hello/**
           filters:
