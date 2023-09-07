@@ -1,0 +1,25 @@
+version: '2'
+services:
+    cloud-gateway:
+        container_name: cloud-gateway
+        build:
+            context: docker-cloud-gateway
+            dockerfile: Dockerfile
+        image: cloud-gateway:latest
+        ports:
+            - 5000:5000
+        networks:
+            - spring-cloud-network
+    hello-docker:
+        container_name: hello-docker
+        build:
+            context: docker-hello-docker
+            dockerfile: Dockerfile
+        image: hello-docker:latest
+        ports:
+            - 8080:8080
+        networks:
+            - spring-cloud-network
+networks:
+    spring-cloud-network:
+        driver: bridge
